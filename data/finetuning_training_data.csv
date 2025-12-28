@@ -1,0 +1,185 @@
+name,description,keywords
+packaging-tutorial-jilejiafle,a small example package,tootorch
+uncover-ml,machine learning tools for the geoscience australia uncover project,uncover ml
+utilmy,utils,utils
+Pharos-k8s,managing kubernetes resources in,kubernetes
+gym-md-lj-test,gym environment for minidungeons,gym environment
+auto-causality,automl for causal inference.,automl
+will,a friendly hipchat bot,chatbot
+rickled,tools for pickling objects in completely different way,pickle
+anamod,feature importance analysis of models,anamod
+prob,utilities for creating and working with discreteprobability distributions,probability
+koilerplate,helper boilerplate code that is useful in kaggle competitions.,kaggle
+aimmo-models,package and tools for deep learning model deployment,models
+bob.pad.vein,implements tools for spoofing or presentation attack detection in vein biometrics,bob
+cleanlab-studio,client interface for all things cleanlab studio,cleanlab
+super-resolution,library generating 4x/8x super resoltion using deep convolutional neural networks.,super resolution
+changshi,implementations for commonsense knowledge and reasoning,nlp
+bob.learn.pytorch,bob bindings for pytorch,pytorch
+flax,flax: a neural network library for jax designed for flexibility,jax
+pyosirix,interface for interacting with osirix through grpc protocol,pyosirix
+bpmll,bp-mll loss function for tensorflow,bpmll
+mxnet-cu101,apache mxnet is an ultra-scalable deep learning framework. this version uses cuda-10.1 and mkldnn.,mxnet
+mxnet-cu75,mxnet is an ultra-scalable deep learning framework. this version uses cuda-7.5.,mxnet
+mxnet-cu92,mxnet is an ultra-scalable deep learning framework. this version uses cuda-9.2.,mxnet
+uncertainty-rejection,analysis of estimates for classification with rejection.,machine learning
+bob.bio.csu,wrapper classes to use the classes from the csu face recognition resources,bob
+ml-automation,automated machine learning,auto_ml
+gsrickled,tools for pickling objects in completely different way,pickle
+pedia-cloud,a third-party api for pedia cloud dictionary,pedia cloud
+mxnet-cu75mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-7.5 and mkldnn.,mxnet
+simfleet,agent-based fleet simulator to test strategies,simfleet
+iminizinc,extensions for the minizinc modelling language,minizinc
+sds,stochastic diffusion search,swarm
+ADTLib,automated drum trancription library,drums
+bob.db.siw,siw database access in bob,bob
+neuro_tagger,"text tagger, based on the elmo embeddings and recurrent neural network, with the simple sklearn-like interface",elmo
+tootorch,implemetation in computer vision (pytorch),tootorch
+pdtrend,photometric detrending algorithm,astronomy
+analitico,client for,machine learning
+huoguoml-dev,a platform for managing and serving machine learning types.,huoguoml
+pickle-rick,tools for pickling objects in completely different way,pickle
+bob.paper.isba2018-entropy,calculating the entropy of fingervein patterns,bob
+torch_maml,gradient checkpointing technique for model agnostic meta learning,meta learning
+pymagnitude,"a fast, efficient universal vector embedding utility package.",pymagnitude
+bob.med.tb,active pulmonary tuberculosis detection on chest x-rays,bob
+openstreetmap,openstreetmap coordinates,openstreetmap
+mxnet-cu113,apache mxnet is an ultra-scalable deep learning framework. this version uses mkldnn.,mxnet
+pynetics,a simple library for experimenting with evolutionary computation,evolutionary computation
+gym-md,gym environment for minidungeons,gym environment
+mxnet-cu80mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-8.0 and mkldnn.,mxnet
+test-nk-4,implemetation in computer vision (pytorch),tootorch
+aglioolio,some data,pytorch
+tox21full,creates the complete tox21 dataset,machine_learning
+ecgi,ecgi:,ecgi
+c2pa,implementation of c2pa: coalition for content provenance and authenticity.,wheels
+huoguoml,a platform for managing and serving machine learning types.,huoguoml
+odinson-ruleutils,library to manipulate odinson rules.,nlp
+easytf,tensorflow cs,tensorflow
+framsreader,files parser for framsticks.,framsticks
+tracery,port of kate compton's tracery text generation library,tracery
+narg2p,non autoregressive grapheme to phoneme conversion toolkit,pytorch
+juxai2022,jux is a jax-accelerated engine for lux-2022.,jax
+mxnet-cu101mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-10.1 and mkldnn.,mxnet
+color-spray,library that colorizes gray stem imagess using deep convolutional neural networks.,color_spray
+CSFunctions,cs functions,tensorflow
+mxnet-cu80,mxnet is an ultra-scalable deep learning framework. this version uses cuda-8.0.,mxnet
+waveletai,a machine learning lifecycle platform,ml
+mxnet-cu100,apache mxnet is an ultra-scalable deep learning framework. this version uses cuda-10.0 and mkldnn.,mxnet
+qurator-sbb-tools,qurator,qurator
+mxnet-mkl,mxnet is an ultra-scalable deep learning framework. this version uses mkldnn.,mxnet
+extorch,an useful extension library of pytorch.,pytorch
+mxnet-cu102,apache mxnet is an ultra-scalable deep learning framework. this version uses cuda-10.2 and mkldnn.,mxnet
+taxi-simulator,agent-based taxi simulator to test strategies,taxi_simulator
+mxnet-cu111,apache mxnet is an ultra-scalable deep learning framework. this version uses mkldnn.,mxnet
+pypcd,read and write pcl .pcd files in,pypcd
+galai,api for the galactica model,scientific
+easypipe,easypipe is a simple tool for developers to build ml applications.,mediapipe
+catboost,catboost package,catboost
+optumi-core,optumi core library,optumi
+bob.paper.CVPRW_2016,"running the experiments as given in paper: ""heterogeneous face recognition using inter-session variability modelling"".",bob
+pysampling,multi-objective optimization in,optimization
+gym-recorder,a simple and ubiquitous transition recorder wrapper for gym environments to facilitate offline reinforcement learning dataset manufacturing.,reinforcement learning
+rossmann-toolbox,prediction and re-engineering of the cofactor specificity of rossmann-fold proteins,bioinformatics
+mxnet-cu110,apache mxnet is an ultra-scalable deep learning framework. this version uses cuda-11.0 and mkldnn.,mxnet
+mit-d3m,mit tools to work with d3m datasets.,mit d3m
+bob.bio.video,run biometric recognition algorithms on videos,bob
+abmarl,agent based simulation and multiagent reinforcement learning,machine learning
+automated-stock-rl,automated stock reinforcement learning,auto_ml
+l2metrics,metrics for lifelong learning,metrics
+mindconverter,"mindconverter platform: linux, cpu: x86_64, git version: [sha1]:bec7dff, [branch]: (head, origin/r1.7, r1.7)",mindconverter
+catboost-dev,catboost package,catboost
+mxnet-gcc5,mxnet is an ultra-scalable deep learning framework. this version uses openblas.,mxnet
+bob.ip.pytorch-extractor,extract features from images using (c)nn built with pytorch,pytorch
+uranus,a plarform for reproducible deep learning and machine learning at scale.,polyaxon
+bob.db.brsu,bob's interface for the brsu multispectral face/skin database,bob
+sisua,semi-supervised generative autoencoder for single cell data,sisua
+mxnet-noavx,mxnet is an ultra-scalable deep learning framework. this version uses openblas.,mxnet
+bob.hobpad2.chapter19,software package to reproduce evaluation methodologies for biometric presentation attack detection chapter of handbook of biometric anti-spoofing: presentation attack detection 2nd edition,bob
+cleanlab-cli,command line interface for all things cleanlab studio,cleanlab
+pincelate,easy to use ml model for spelling and sounding out words,pincelate
+DI-searching,decision,rl
+simple-s3,simple s3 uploads,s3
+chatting-chatbots,a library for running experiments of multiple chatbots having conversations with each other.,template
+mxnet,apache mxnet is an ultra-scalable deep learning framework. this version uses openblas and mkldnn.,mxnet
+mxnet-cu114,apache mxnet is an ultra-scalable deep learning framework. this version uses mkldnn.,mxnet
+vai,is a console-based ide similar to vim,editor
+attention-tensorflow-mesh,"a bunch of attention related functions, for constructing transformers in tensorflow mesh",transformers
+test-nk-3,implemetation in computer vision (pytorch),tootorch
+prompt-matrix,expand a prompt matrix strings into a list of prompts.,prompt engineering
+osmosis-driver-interface,💧 osmosis driver interface. a membrane between the decentralized world and centralized world.,osmosis driver interface
+readability-transformers,package for integrating transformer modules for readability-related nlp tasks.,transformers
+pyeasyga,a simple and easy-to-use implementation of a genetic algorithm library in,pyeasyga
+mxnet-cu90,mxnet is an ultra-scalable deep learning framework. this version uses cuda-9.0.,mxnet
+poseydon-chisel,chisel package part of the poseydon suite,poseydon_chisel
+torchmerge,torch,torch
+qurator-sbb-utils,qurator,qurator
+test-nk-2,implemetation in computer vision (pytorch),tootorch
+batterydataextractor,batterydataextractor: battery-aware text-mining software embedded with bert models,bde
+mxnet-cu102mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-10.2 and mkldnn.,mxnet
+faster-particles,point proposal network for particles images and related tools.,physics
+rosey-power,"finally, easy power analysis",statistics
+bob.db.uvad,uvad database access in bob,bob
+cold-start-recommender,in-memory recommender for recommendations produced on-the-fly,recommendations
+rnnr,rnnr: neural network runner,neural networks
+rdt,reversible data transforms,rdt
+snntorch-ipu,deep learning with spiking neural networks on ipus.,snntorch
+mxnet-cu112,apache mxnet is an ultra-scalable deep learning framework. this version uses cuda-11.2 and mkldnn.,mxnet
+bob.learn.tensorflow,bob bindings for tensorflow,tensorflow
+test20201020,test,calculator
+ailearn,a lightweight package for,machine learning
+btmodified,modified version of bertopics,none
+seq2seq-pytorch,"industrial-grade implementation of seq2seq algorithm based on pytorch, integrated beam search algorithm.",seq2seq
+dphmix,unsupervised and semi-supervised dirichlet process heterogeneous mixtures,mixture model
+fandak,a framework for ml research using pytorch,pytorch
+bob.pad.face,implements tools for spoofing or presentation attack detection in face biometrics,bob
+mxnet-cu116,apache mxnet is an ultra-scalable deep learning framework. this version uses mkldnn.,mxnet
+mxnet-native,mxnet is an ultra-scalable deep learning framework. this version uses .,mxnet
+kaamiki,kaamiki is a simple machine learning framework for obvious tasks.,kaamiki
+bob.hobpad2.veins,"software package to reproduce experiments of chapter 18, ""an introduction to vein presentation attacks and detection"" of the ""handbook of biometric anti-spoofing: presentation attack detection 2nd edition"" book",bob
+jaxlib,xla library for jax,jax
+bob.db.batl,"implements a low-level database interface for the batl database, which is designed for spoofing or presentation attack detection experiments in face biometrics.",bob
+bob.hobpad2.chapter20,software package to reproduce evaluation methodologies for biometric presentation attack detection chapter of handbook of biometric anti-spoofing: presentation attack detection 2nd edition,bob
+torch-nk,implemetation in computer vision (pytorch),tootorch
+FiniteDiffX,finite difference tools in jax.,jax
+aicmder,a simple cmder,cmder
+smartsifter,implementation of smartsifter,smartsifter
+azureml-widgets,"provides fully supported, with interactivity, async auto-updates, and non-blocking cell execution.",widgets
+satflow,satellite optical flow,nowcasting
+plutus,efficient storage management.,polyaxon
+mxnet-cu92mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-9.2 and mkldnn.,mxnet
+spade-bdi,plugin for spade 3 mas platform to implement bdi agents.,spade_bdi
+recsyslearn,a small library to compute of recommender systems.,recsyslearn
+selfcheckgpt,selfcheckgpt: assessing text-based responses from llms,selfcheckgpt
+mxnet-cu100mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-10.0 and mkldnn.,mxnet
+bob.pipelines,tools to build robust and extensible pipelines,bob
+test-nk,implemetation in computer vision (pytorch),tootorch
+bob.db.swan,swan database access api for bob,bob
+mindinsight,"mindinsight platform: linux, cpu: x86_64, git version: [sha1]:c248457, [branch]: (head, origin/master, origin/head, master)",mindinsight
+mxnet-cu115,apache mxnet is an ultra-scalable deep learning framework. this version uses mkldnn.,mxnet
+synmod,temporal model synthesis,synmod
+mlsteam-model-sdk,mlsteam model sdk,sdk
+impartial-text-cls,"text classifier, based on the bert and a bayesian neural network, which can on small labeled texts and doubt its decision",bert
+ai4bharat-transliteration,indic-xlit: transliteration library for indic languages. conversion of text from english to 21 languages of south asia.,indic transliteration
+xai-benchmark,benchmark for methods,interpretability
+polyglot,polyglot is a natural language pipeline that supports massive multilingual applications.,polyglot
+hktools,a toolbox for deep learning developer,toolbox
+tensorflow-qndex,tensorflow-qnd x tensorflow-extenteten,tensorflow
+cvms,codebase for attention、transfomrer、backbone、convolution、mlp、re-parameter、module,attentiontransfomrerbackboneconvolutionmlpre parameter
+mercs-mixed,mercs: multi-directional ensembles of regression and classification trees,decision trees
+bob.io.stream,new package,bob
+bob.db.oulunpu,oulu-npu database access in bob,bob
+fairseq,facebook research sequence-to-sequence toolkit,pytorch
+dryml,"don't repeat yourself machine learning: a machine learning library to reduce code duplication, and increase portability and interoperability in the machine learning space.",ml
+bob.ip.binseg,binary segmentation benchmark package for bob,bob
+x-and-y.glassbox-sdk,the sdk for the glassbox service,machine learning
+gravitorch,warning: api is not stable,gravitorch
+polyline,a implementation of google's encoded polyline algorithm format.,polyline
+ml-automated-123,automated machine learning,auto_ml
+lazytext,"lazytext is inspired by the idea of lazypredict, a library which helps build lot of basic models without much code. lazytext is for text what lazypredict is for numeric data.",text classification
+lspi-python,lspi algorithm in,machinelearning
+gpflux,gpflux: deep gp library,deep gaussian processes
+intellino,the intellino core logic wrapper for ml simulation with intellino,intellino
+mxnet-cu90mkl,mxnet is an ultra-scalable deep learning framework. this version uses cuda-9.0 and mkldnn.,mxnet
+clip-similarwords,finding similar 1-token words on clip.,clip
+optumi-api,optumi api library,optumi
