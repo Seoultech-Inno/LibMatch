@@ -20,9 +20,8 @@ data/*.json
 # data/README.md는 추적
 !data/README.md
 
-# 모델 파일들 (매우 큰 파일)
-model/
-*.safetensors
+# 모델 파일들 - Fine-tuned model is included via Git LFS
+# *.safetensors files are tracked by Git LFS
 *.bin
 *.pt
 *.pth
