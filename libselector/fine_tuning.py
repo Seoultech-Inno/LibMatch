@@ -20,9 +20,6 @@ from torch.utils.data import DataLoader
 
 from libmatch.config import (
     DATA_DIR,
-    MONGO_URI,
-    MONGO_DB_NAME,
-    MONGO_COLLECTION_NAME,
     PROJECT_ROOT
 )
 
@@ -70,67 +67,10 @@ def load_training_data_from_csv(csv_path: Union[str, Path]) -> List[InputExample
     return train_examples
 
 
-def load_training_data_from_mongodb(
-    mongo_uri: str = None,
-    db_name: str = None,
-    collection_name: str = None
-) -> List[InputExample]:
-    """
-    Load training data from MongoDB
-    
-    Parameters:
-    -----------
-    mongo_uri : str, optional
-        MongoDB URI (default: from config)
-    db_name : str, optional
-        Database name (default: from config)
-    collection_name : str, optional
-        Collection name (default: from config)
-        
-    Returns:
-    --------
-    List[InputExample] : List of training examples
-    """
-    from pymongo.mongo_client import MongoClient
-    
-    if mongo_uri is None:
-        mongo_uri = MONGO_URI
-    if db_name is None:
-        db_name = MONGO_DB_NAME
-    if collection_name is None:
-        collection_name = MONGO_COLLECTION_NAME
-    
-    if not mongo_uri:
-        raise ValueError("MongoDB URI is required. Set MONGO_URI environment variable.")
-    
-    client = MongoClient(mongo_uri)
-    db = client[db_name]
-    col = db[collection_name]
-    
-    train_examples = []
-    for item in col.find():
-        if item.get('keywords') and item.get('description'):
-            keywords = item['keywords']
-            if isinstance(keywords, list):
-                keywords_str = ', '.join([str(k) for k in keywords])
-            else:
-                keywords_str = str(keywords)
-            
-            train_examples.append(
-                InputExample(
-                    texts=[item['description'], keywords_str],
-                    label=0.7
-                )
-            )
-    
-    return train_examples
-
-
 def fine_tune_sentencebert(
     base_model_name: str = 'all-mpnet-base-v2',
     training_data: Optional[List[InputExample]] = None,
     training_data_path: Optional[Union[str, Path]] = None,
-    use_mongodb: bool = False,
     output_path: Optional[Union[str, Path]] = None,
     batch_size: int = 16,
     epochs: int = 2,
@@ -148,11 +88,9 @@ def fine_tune_sentencebert(
     base_model_name : str
         Base model name (default: 'all-mpnet-base-v2')
     training_data : List[InputExample], optional
-        Pre-loaded training data (if None, will load from file or MongoDB)
+        Pre-loaded training data (if None, will load from CSV file)
     training_data_path : Union[str, Path], optional
         Path to CSV file with training data (default: data/finetuning_training_data.csv)
-    use_mongodb : bool
-        Whether to load training data from MongoDB (default: False)
     output_path : Union[str, Path], optional
         Path to save fine-tuned model (default: output/all-mpnet-base-v2-finetuned-stackwiki-accelerate)
     batch_size : int
@@ -182,30 +120,26 @@ def fine_tune_sentencebert(
     # Load training data
     print("\n[Step 2] Loading training data...")
     if training_data is None:
-        if use_mongodb:
-            print("Loading from MongoDB...")
-            training_data = load_training_data_from_mongodb()
-        else:
-            if training_data_path is None:
-                # Try default paths
-                default_paths = [
-                    DATA_DIR / 'finetuning_training_data.csv',
-                    PROJECT_ROOT / 'libmatch' / 'data' / 'finetuning_training_data.csv'
-                ]
-                training_data_path = None
-                for path in default_paths:
-                    if Path(path).exists():
-                        training_data_path = path
-                        break
-                
-                if training_data_path is None:
-                    raise FileNotFoundError(
-                        "Training data file not found. Please provide training_data_path or "
-                        "ensure data/finetuning_training_data.csv exists."
-                    )
+        if training_data_path is None:
+            # Try default paths
+            default_paths = [
+                DATA_DIR / 'finetuning_training_data.csv',
+                PROJECT_ROOT / 'libmatch' / 'data' / 'finetuning_training_data.csv'
+            ]
+            training_data_path = None
+            for path in default_paths:
+                if Path(path).exists():
+                    training_data_path = path
+                    break
             
-            print(f"Loading from CSV: {training_data_path}")
-            training_data = load_training_data_from_csv(training_data_path)
+            if training_data_path is None:
+                raise FileNotFoundError(
+                    "Training data file not found. Please provide training_data_path or "
+                    "ensure data/finetuning_training_data.csv exists."
+                )
+        
+        print(f"Loading from CSV: {training_data_path}")
+        training_data = load_training_data_from_csv(training_data_path)
     
     print(f"✅ Loaded {len(training_data)} training examples")
     
@@ -275,11 +209,6 @@ if __name__ == '__main__':
         help='Path to training data CSV file'
     )
     parser.add_argument(
-        '--use-mongodb',
-        action='store_true',
-        help='Load training data from MongoDB instead of CSV'
-    )
-    parser.add_argument(
         '--output-path',
         type=str,
         default=None,
@@ -315,7 +244,6 @@ if __name__ == '__main__':
     fine_tune_sentencebert(
         base_model_name=args.base_model,
         training_data_path=args.training_data,
-        use_mongodb=args.use_mongodb,
         output_path=args.output_path,
         batch_size=args.batch_size,
         epochs=args.epochs,
