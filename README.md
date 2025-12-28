@@ -11,31 +11,36 @@ libmatch/
 ├── __init__.py                          # Package initialization
 ├── config.py                             # Configuration file
 ├── utils.py                              # Common utility functions
-├── data_collection.py                    # Section 3.1: Data collection and preprocessing
-├── keyword_extraction.py                 # Section 3.2: Keyword extraction
-├── semantic_matching.py                  # Section 3.3: Semantic matching
-├── candidate_ranking.py                  # Section 3.4: Candidate ranking
-├── evaluation.py                         # Section 3.5: Evaluation and validation
 ├── visualization.py                      # Visualization utilities
-├── main.py                               # Main pipeline (all steps)
 ├── run_pipeline.py                       # Full pipeline runner (3 phases)
-├── libselector/                          # Phase 1: LibSelector
-│   ├── __init__.py
-│   └── pipeline.py                        # Library selection pipeline
-├── devlibscraper/                        # Phase 2: DevLibScraper
-│   ├── __init__.py
-│   └── pipeline.py                        # Developer identification pipeline
-├── devlibmatcher/                        # Phase 3: DevLibMatcher
-│   ├── __init__.py
-│   └── pipeline.py                        # Candidate selection pipeline
 ├── check_data_requirements.py           # Script to verify data availability
+├── libselector/                          # Phase 1: LibSelector (Section 3.2)
+│   ├── __init__.py
+│   ├── pipeline.py                        # Phase 1 pipeline
+│   ├── keyword_extraction.py             # Section 3.2.1: Keyword Extraction (KeyBERT)
+│   ├── semantic_matching.py              # Section 3.2.3: Library Selection (SentenceBERT)
+│   └── outputs.py                         # Phase 1 output definitions
+├── devlibscraper/                        # Phase 2: DevLibScraper (Section 3.3)
+│   ├── __init__.py
+│   ├── pipeline.py                        # Phase 2 pipeline
+│   ├── data_collection.py                # Section 3.3.1-3.3.2: Developer Pooling & Library Extraction
+│   └── outputs.py                         # Phase 2 output definitions
+├── devlibmatcher/                        # Phase 3: DevLibMatcher (Section 3.4-3.5)
+│   ├── __init__.py
+│   ├── pipeline.py                        # Phase 3 pipeline
+│   ├── candidate_ranking.py              # Section 3.4.1: Library Matching
+│   ├── evaluation.py                     # Section 3.5: Evaluation and Validation
+│   ├── label_loader.py                   # Label loading utilities
+│   ├── check_validation_requirements.py  # Validation data checker
+│   └── outputs.py                         # Phase 3 output definitions
 ├── data/                                 # Local data directory
+│   ├── README.md                         # Data directory documentation
 │   ├── library_similarity_ranking.csv   # Pre-computed library similarity ranking
-│   ├── developer_pool_anonymized.csv   # Anonymized developer pool data
-│   └── validation_labels_anonymized.csv # Anonymized validation labels
+│   ├── developer_pool_anonymized.csv     # Anonymized developer pool data
+│   └── validation_labels_anonymized.csv  # Anonymized validation labels
 ├── README.md                             # This file
 ├── REPRODUCTION_GUIDE.md                 # Paper reproduction guide
-└── REVIEWER_CHECKLIST.md                 # Reviewer checklist
+└── VERIFICATION_REPORT.md                # Code-paper alignment verification report
 ```
 
 ### Pipeline Structure
@@ -171,16 +176,54 @@ results = run_full_pipeline()
 
 ## Module Descriptions
 
-### Section 3.1: Data Collection and Preprocessing (`data_collection.py`)
+### Phase 1: LibSelector (Section 3.2)
 
-- **GitHubDataCollector**: Collects developer data and library information from GitHub
-  - `get_packages_from_repos()`: Extract packages from repositories
-  - `load_users()`: Load saved user data
-  - `load_libraries()`: Load library data (from local file or MongoDB)
-
-### Section 3.2: Keyword Extraction (`keyword_extraction.py`)
-
+#### Section 3.2.1: Keyword Extraction (`libselector/keyword_extraction.py`)
 - **KeywordExtractor**: Extracts key keywords from job postings using KeyBERT
+  - Uses fine-tuned "all-mpnet-base-v2" model
+  - Applies stopwords filtering
+
+#### Section 3.2.2: Keyword Conversion
+- Library database construction (handled via `library_similarity_ranking.csv`)
+- Libraries.io API integration (data pre-computed)
+
+#### Section 3.2.3: Library Selection (`libselector/semantic_matching.py`)
+- **SemanticMatcher**: Selects libraries using SentenceBERT cosine similarity
+  - Filters libraries with stars + forks >= 100
+  - Selects top N libraries based on similarity scores
+
+### Phase 2: DevLibScraper (Section 3.3)
+
+#### Section 3.3.1: Developer Pooling (`devlibscraper/data_collection.py`)
+- **GitHubDataCollector**: Collects developer data from GitHub
+  - Uses GitHub API to find developers
+  - Filters by Contributed Repos Stars Count (i) and Followers Count (j)
+  - Supports Target Language filtering
+
+#### Section 3.3.2: Library Extraction (`devlibscraper/data_collection.py`)
+- **GitHubDataCollector**: Extracts libraries from developer code
+  - Prioritizes setup.py and requirements.txt files
+  - Uses regex patterns to extract Python import statements
+  - Excludes forked repositories
+
+### Phase 3: DevLibMatcher (Section 3.4-3.5)
+
+#### Section 3.4.1: Library Matching (`devlibmatcher/candidate_ranking.py`)
+- **CandidateRanker**: Matches developers based on overlap libraries
+  - Counts overlap libraries (M value)
+  - Filters candidates with M or more matching libraries
+
+#### Section 3.4.2: Developer Classification (`devlibmatcher/pipeline.py`)
+- Classifies candidates into 4 types using median values:
+  - **Pioneers**: High contributions + High followers
+  - **Ambassadors**: Low contributions + High followers
+  - **Potential**: Low contributions + Low followers
+  - **Dedicated**: High contributions + Low followers
+
+#### Section 3.5: Evaluation (`devlibmatcher/evaluation.py`)
+- **Evaluator**: Evaluates system performance
+  - Calculates Precision, Recall, F1 Score
+  - Tests multiple N and M value combinations
   - `extract_keywords()`: Extract keywords from single text
   - `extract_keywords_batch()`: Extract keywords from multiple texts
   - `extract_keywords_from_job_posting()`: Extract keywords from job posting DataFrame
