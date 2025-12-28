@@ -63,21 +63,21 @@ The Method section is organized into 3 phases according to the paper (Section 3.
 
 ## GitHub Repository Setup
 
-이 패키지는 GitHub에 업로드할 수 있도록 정리되었습니다.
+This package is ready for GitHub upload.
 
 ### Important Notes for GitHub Upload
 
-1. **민감한 정보 제거**: `config.py`의 MongoDB URI는 환경변수로만 설정됩니다.
-2. **큰 파일 제외**: `.gitignore`에 의해 다음 파일들은 제외됩니다:
-   - `data/*.pkl`, `data/*.json`, `data/*.csv` (데이터 파일)
-   - `model/` (모델 파일)
-   - `results/` (실행 결과)
-   - `__pycache__/` (Python 캐시)
+1. **Sensitive Information Removed**: MongoDB URI in `config.py` is only set via environment variables.
+2. **Large Files Excluded**: The following files are excluded by `.gitignore`:
+   - `data/*.pkl`, `data/*.json`, `data/*.csv` (data files)
+   - `model/` (model files)
+   - `results/` (execution results)
+   - `__pycache__/` (Python cache)
 
-3. **필수 파일**: 다음 파일들은 GitHub에 포함됩니다:
-   - 모든 Python 소스 코드 (`.py` 파일)
-   - 문서 파일 (`README.md`, `REPRODUCTION_GUIDE.md` 등)
-   - `data/README.md` (데이터 디렉토리 설명)
+3. **Required Files**: The following files are included in GitHub:
+   - All Python source code (`.py` files)
+   - Documentation files (`README.md`, `REPRODUCTION_GUIDE.md`, etc.)
+   - `data/README.md` (data directory documentation)
 
 ### Environment Setup for Users
 
@@ -158,21 +158,21 @@ results = run_full_pipeline()
 
 ## Phase Outputs
 
-각 Phase의 출력 결과는 `results/` 디렉토리에 저장됩니다. 자세한 내용은 [OUTPUTS_DOCUMENTATION.md](OUTPUTS_DOCUMENTATION.md)를 참조하세요.
+Output results from each phase are saved in the `results/` directory. For detailed information, see [OUTPUTS_DOCUMENTATION.md](OUTPUTS_DOCUMENTATION.md).
 
 ### Phase 1: LibSelector Outputs
-- **3.2.1 Keyword Extraction**: `results/libselector/extracted_keywords.pkl` - 추출된 키워드 리스트
-- **3.2.2 Keyword Conversion**: `results/libselector/library_database.pkl` - 구조화된 라이브러리 데이터베이스
-- **3.2.3 Library Selection**: `results/libselector/selected_libraries.pkl` - 상위 N개 선택된 라이브러리 (stars+forks >= 100)
+- **3.2.1 Keyword Extraction**: `results/libselector/extracted_keywords.pkl` - Extracted keyword list
+- **3.2.2 Keyword Conversion**: `results/libselector/library_database.pkl` - Structured library database
+- **3.2.3 Library Selection**: `results/libselector/selected_libraries.pkl` - Top N selected libraries (stars+forks >= 100)
 
 ### Phase 2: DevLibScraper Outputs
-- **3.3.1 Developer Pooling**: `results/devlibscraper/developer_pool.pkl` - 개발자 풀 (메트릭 포함)
-- **3.3.2 Library Extraction**: `results/devlibscraper/developer_library_mapping.pkl` - 개발자-라이브러리 매핑
+- **3.3.1 Developer Pooling**: `results/devlibscraper/developer_pool.pkl` - Developer pool (with metrics)
+- **3.3.2 Library Extraction**: `results/devlibscraper/developer_library_mapping.pkl` - Developer-library mapping
 
 ### Phase 3: DevLibMatcher Outputs
-- **3.4.1 Library Matching**: `results/devlibmatcher/filtered_candidates.pkl` - M개 이상 overlap libraries를 가진 후보
-- **3.4.2 Developer Classification**: `results/devlibmatcher/classified_candidates.pkl` - 분류된 후보 (Pioneers, Ambassadors, Potential, Dedicated)
-- **3.5 Evaluation**: `results/devlibmatcher/evaluation_results.csv` - 평가 결과
+- **3.4.1 Library Matching**: `results/devlibmatcher/filtered_candidates.pkl` - Candidates with M or more overlap libraries
+- **3.4.2 Developer Classification**: `results/devlibmatcher/classified_candidates.pkl` - Classified candidates (Pioneers, Ambassadors, Potential, Dedicated)
+- **3.5 Evaluation**: `results/devlibmatcher/evaluation_results.csv` - Evaluation results
 
 ## Module Descriptions
 
