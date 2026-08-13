@@ -84,3 +84,11 @@ This implementation follows the three-phase approach:
 - **Phase 1: LibSelector** - Library selection relevant to job postings
 - **Phase 2: DevLibScraper** - Developer identification using selected libraries
 - **Phase 3: DevLibMatcher** - Candidate selection and classification
+
+@article{kim2026libmatch,
+  title   = {Treasure Hunting in the Talent Ocean: Automating Talent Acquisition for Competent Developers from GitHub},
+  author  = {Kim, Minchan and Lee, Hakyeon},
+  journal = {Annals of Data Science},
+  year    = {2026},
+  doi     = {10.1007/s40745-026-00705-4}
+}
