@@ -1,4 +1,15 @@
-# LibMatch
+# LibMatch: Automated Talent Acquisition from GitHub
+
+> LibMatch is an AI-powered framework for proactive talent acquisition that
+> identifies qualified developers for a given job posting by matching job
+> requirements with technology libraries used by GitHub developers.
+
+**Annals of Data Science, 2026**
+
+[Paper](https://doi.org/10.1007/s40745-026-00705-4) ·
+[Installation](#installation) ·
+[Usage](#usage) ·
+[Citation](#citation)
 
 Python package implementing LibMatch for developer talent acquisition by matching job descriptions with developer libraries using KeyBERT and SentenceBERT.
 
