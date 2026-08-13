@@ -78,13 +78,17 @@ fine_tune_sentencebert(
 
 ## Paper Reference
 
-> Treasure hunting in the talent ocean: Automating talent acquisition for competent developers from GitHub
+**Treasure Hunting in the Talent Ocean: Automating Talent Acquisition for Competent Developers from GitHub**
 
-This implementation follows the three-phase approach:
-- **Phase 1: LibSelector** - Library selection relevant to job postings
-- **Phase 2: DevLibScraper** - Developer identification using selected libraries
-- **Phase 3: DevLibMatcher** - Candidate selection and classification
+This repository implements the three-phase framework proposed in the paper:
 
+1. **LibSelector** — Selects software libraries relevant to a given job posting.
+2. **DevLibScraper** — Identifies GitHub developers who have used the selected libraries.
+3. **DevLibMatcher** — Matches and classifies developer candidates according to the job requirements.
+
+### Citation
+
+```bibtex
 @article{kim2026libmatch,
   title   = {Treasure Hunting in the Talent Ocean: Automating Talent Acquisition for Competent Developers from GitHub},
   author  = {Kim, Minchan and Lee, Hakyeon},
@@ -92,3 +96,4 @@ This implementation follows the three-phase approach:
   year    = {2026},
   doi     = {10.1007/s40745-026-00705-4}
 }
+```
